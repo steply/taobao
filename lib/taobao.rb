@@ -26,6 +26,21 @@ require "taobao/models/taobaoke_item"
 require "taobao/rails/controller"
 
 module Taobao
+  mattr_accessor :app_key
+  @@app_key = nil
+
+  mattr_accessor :app_secret
+  @@app_secret = nil
+
+  mattr_accessor :rest_endpoint
+  @@rest_endpoint = nil
+
+  mattr_accessor :auth_url
+  @@auth_url = nil
+
+  def self.setup
+    yield self
+  end
 end
 
 ActionController::Base.send :include, Taobao::Rails::Controller

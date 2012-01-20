@@ -1,0 +1,15 @@
+= Taobao
+
+The plugin enable easy integration with the [Taobao Open Platform](http://open.taobao.com/)
+
+== Installation and configuration
+
+=== Create a config/initializers/taobao.rb
+
+	Taobao.setup do |config|
+	  config.app_key       = "12012322"
+	  config.app_secret    = "42ab2d12a5bea25d1bc06ccd23123121daf"
+	  config.rest_endpoint = "http://gw.api.tbsandbox.com/router/rest"
+	  config.auth_url      = "http://open.taobao.com/isv/authorize.php?appkey="
+	end
+

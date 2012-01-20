@@ -6,7 +6,7 @@ module Taobao
     attr_reader :top_params
 
     def initialize(params)
-      str = params['top_appkey'] + params["top_parameters"] + params["top_session"] + ENV['TAOBAO_APP_SECRET']
+      str = params['top_appkey'] + params["top_parameters"] + params["top_session"] + Taobao.app_secret
       md5 = Digest::MD5.digest(str)
       sign = Base64.encode64(md5).strip
 

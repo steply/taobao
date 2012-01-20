@@ -10,20 +10,20 @@ module Taobao
       options = options.clone
 
       @params = {
-        'app_key' => ENV['TAOBAO_APP_KEY'],
-        'method'=> method,
-        'format'=>'xml',
-        'v'=>'1.0',
-        'timestamp'=> Time.now.strftime("%Y-%m-%d %H:%M:%S")
+        'app_key'   => Taobao.app_key,
+        'method'    => method,
+        'format'    =>'xml',
+        'v'         =>'1.0',
+        'timestamp' => Time.now.strftime("%Y-%m-%d %H:%M:%S")
       }
 
       @params.merge!(options)
-      str = ENV['TAOBAO_APP_SECRET'] + (@params.sort.collect { |c| "#{c[0]}#{c[1]}" }).join("")
+      str = Taobao.app_secret + (@params.sort.collect { |c| "#{c[0]}#{c[1]}" }).join("")
       @params["sign"] = Digest::MD5.hexdigest(str).upcase!
     end
 
     def invoke
-      res = Net::HTTP.post_form(URI.parse(ENV['TAOBAO_REST_ENDPOINT']), @params)
+      res = Net::HTTP.post_form(URI.parse(Taobao.rest_endpoint), @params)
     end
   end
 end

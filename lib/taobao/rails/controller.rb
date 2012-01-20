@@ -17,7 +17,7 @@ module Taobao
       end
 
       def taobao_auth_url
-        ENV['TAOBAO_AUTH_URL'] + ENV['TAOBAO_APP_KEY']
+        Taobao.auth_url + Taobao.app_key
       end
 
       def taobao_auth_link(name)
