@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'digest/md5'
 require 'net/http'
 require 'open-uri'

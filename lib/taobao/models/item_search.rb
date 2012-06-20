@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 #
 # http://wiki.open.taobao.com/index.php/ItemSearch
 #

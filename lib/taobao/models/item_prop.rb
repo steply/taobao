@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'taobao/model'
 
 module Taobao
